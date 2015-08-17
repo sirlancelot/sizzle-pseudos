@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sizzle-pseudos by sirlancelot</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Sizzle-pseudos</h1>
+        <p>A collection of cool custom pseudo selectors for jQuery &amp; Sizzle</p>
+
+        <p class="view"><a href="https://github.com/sirlancelot/sizzle-pseudos">View the Project on GitHub <small>sirlancelot/sizzle-pseudos</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/sirlancelot/sizzle-pseudos/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sirlancelot/sizzle-pseudos/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sirlancelot/sizzle-pseudos">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="jquerysizzle-custom-pseudo-selectors" class="anchor" href="#jquerysizzle-custom-pseudo-selectors" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery/Sizzle Custom Pseudo Selectors</h1>
+
+<p>Just my collection of pseudos.</p>
+
+<h2>
+<a id="performance" class="anchor" href="#performance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performance</h2>
+
+<p>Take care about how many elements will be passed through these selectors as
+they will not be able to take advantage of the performance boost provided by
+the native DOM <code>querySelectorAll()</code> method. To achieve the best performance
+when using any of these pseudos, first narrow down your set using a native
+selector and then use <code>.filter(":pseudo()")</code>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/sirlancelot">sirlancelot</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
