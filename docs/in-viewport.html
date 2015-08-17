@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>in-viewport.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="ancestor.html">
+                  ancestor.js
+                </a>
+              
+                
+                <a class="source" href="in-viewport.html">
+                  in-viewport.js
+                </a>
+              
+                
+                <a class="source" href="regexp.html">
+                  regexp.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>in-viewport.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>For use with <code>.filter()</code>, selects elements whose dimensions fall within the
+current viewport.</p>
+<pre><code>$(<span class="hljs-string">"li"</span>).filter(<span class="hljs-string">":in-viewport"</span>)
+</code></pre><p>You can also supply a tolerance in pixels. The tolerance will allow the
+element to be partially outside the viewport.</p>
+<pre><code>$(<span class="hljs-string">"li"</span>).filter(<span class="hljs-string">":in-viewport(15)"</span>)
+</code></pre><p>The supplied tolerance must be a non-negative integer. An error will be
+thrown otherwise.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>$.expr[<span class="hljs-string">":"</span>][<span class="hljs-string">"in-viewport"</span>] = $.expr.createPseudo(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">tolerance</span>) </span>{
+	tolerance = <span class="hljs-built_in">parseInt</span>(tolerance || <span class="hljs-number">0</span>, <span class="hljs-number">10</span>);
+	<span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(tolerance) || tolerance &lt; <span class="hljs-number">0</span>)
+		<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Bad :in-viewport() param: "</span> + tolerance);
+
+	<span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inViewport</span>(<span class="hljs-params">el</span>) </span>{
+		<span class="hljs-keyword">var</span> rect = el.getBoundingClientRect();
+		<span class="hljs-keyword">var</span> height = <span class="hljs-built_in">window</span>.innerHeight || <span class="hljs-built_in">document</span>.documentElement.clientHeight;
+		<span class="hljs-keyword">var</span> width = <span class="hljs-built_in">window</span>.innerWidth || <span class="hljs-built_in">document</span>.documentElement.clientWidth;
+		<span class="hljs-keyword">return</span> (
+			rect.top &gt;= -tolerance &amp;&amp;
+			rect.left &gt;= -tolerance &amp;&amp;
+			rect.bottom &lt;= (height + tolerance) &amp;&amp;
+			rect.right &lt;= (width + tolerance)
+		);
+	};
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
