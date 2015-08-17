@@ -6,10 +6,7 @@
 // Returns only form elements which are inside an element matching the
 // selector `.filter-pane`.
 $.expr[":"].ancestor = $.expr.createPseudo(function(selector) {
-	// Pre-compile the selector. If it is invalid then an error will be thrown
-	// here and not further down the pipeline where the stack trace might be
-	// more confusing.
-	$.find.compile(selector);
+	$.find.compile(selector); // throws SyntaxError if selector is bad.
 	var matches = $.find.matchesSelector;
 
 	return function ancestor(el) {
