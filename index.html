@@ -41,6 +41,20 @@ they will not be able to take advantage of the performance boost provided by
 the native DOM <code>querySelectorAll()</code> method. To achieve the best performance
 when using any of these pseudos, first narrow down your set using a native
 selector and then use <code>.filter(":pseudo()")</code>.</p>
+
+<h2>
+<a id="available-pseudos" class="anchor" href="#available-pseudos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Pseudos</h2>
+
+<ul>
+<li>
+<a href="http://matpie.com/sizzle-pseudos/docs/ancestor.html"><code>:ancestor()</code></a> - Selects elements with a common ancestor.</li>
+<li>
+<a href="http://matpie.com/sizzle-pseudos/docs/in-viewport.html"><code>:in-viewport()</code></a> - Selects elements which are within the
+current viewport.</li>
+<li>
+<a href="http://matpie.com/sizzle-pseudos/docs/regexp.html"><code>:regexp()</code></a> - Finds elements which have a property matching a
+given RegExp.</li>
+</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/sirlancelot">sirlancelot</a></p>
@@ -48,6 +62,16 @@ selector and then use <code>.filter(":pseudo()")</code>.</p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-44304012-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
